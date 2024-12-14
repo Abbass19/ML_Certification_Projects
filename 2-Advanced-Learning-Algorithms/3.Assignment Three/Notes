@@ -1,0 +1,14 @@
+This assignment is a weird one actually. It doesn't do a straight forward thing.
+
+It uses mix of mathematical function and polynomials. They fit that mathematical functions
+to the data points and then make a huge discussion on over-fitting and under-fitting.
+
+The Procedure is actually hard to follow. But this is the way !!
+
+I don't know that this make good use of my time. I will only copy it.
+
+
+The Procedure done is the following:
+    1.Generate Data &  Split & Plot
+    2.Train using lin_model ; Class defined by Coursera
+    3.
