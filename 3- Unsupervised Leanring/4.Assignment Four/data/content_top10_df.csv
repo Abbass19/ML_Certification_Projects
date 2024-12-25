@@ -1,0 +1,11 @@
+movie id,num ratings,ave rating,title,genres
+4993,198,4.106060606,"Lord of the Rings: The Fellowship of the Ring, The",Adventure|Fantasy
+5952,188,4.021276596,"Lord of the Rings: The Two Towers, The",Adventure|Fantasy
+7153,185,4.118918919,"Lord of the Rings: The Return of the King, The",Action|Adventure|Drama|Fantasy
+4306,170,3.867647059,Shrek,Adventure|Animation|Children|Comedy|Fantasy|Romance
+58559,149,4.238255034,"Dark Knight, The",Action|Crime|Drama
+6539,149,3.77852349,Pirates of the Caribbean: The Curse of the Black Pearl,Action|Adventure|Comedy|Fantasy
+79132,143,4.066433566,Inception,Action|Crime|Drama|Mystery|Sci-Fi|Thriller
+6377,141,3.960992908,Finding Nemo,Adventure|Animation|Children|Comedy
+4886,132,3.871212121,"Monsters, Inc.",Adventure|Animation|Children|Comedy|Fantasy
+7361,131,4.160305344,Eternal Sunshine of the Spotless Mind,Drama|Romance|Sci-Fi
