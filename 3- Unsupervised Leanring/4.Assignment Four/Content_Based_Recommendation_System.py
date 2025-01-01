@@ -2,6 +2,7 @@ import numpy as np
 import numpy.ma as ma
 import pandas as pd
 import tensorflow as tf
+from tensorflow.keras.layers import Dense
 from tensorflow import keras
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.model_selection import train_test_split
@@ -127,5 +128,44 @@ user_train, user_test = train_test_split(user_train, train_size=0.80, shuffle=Tr
 y_train, y_test       = train_test_split(y_train,    train_size=0.80, shuffle=True, random_state=1)
 print(f"movie/item training data shape: {item_train.shape}")
 print(f"movie/item test data shape: {item_test.shape}")
+
+
+
+num_outputs = 32
+tf.random.set_seed(1)
+
+user_sequential_network = tf.keras.models.Sequential([
+    tf.keras.layers.InputLayer(input_shape=(14,)),
+    Dense(256, activation='relu', name='L1'),
+    Dense(128, activation='relu', name='L2'),
+    Dense(32, activation='linear', name='L3')
+], name="USER_NETWORK"
+
+)
+
+movie_sequential_network = tf.keras.models.Sequential([
+    tf.keras.layers.InputLayer(input_shape=(16,)),
+    Dense(256, activation='relu', name='L1'),
+    Dense(128, activation='relu', name='L2'),
+    Dense(32, activation='linear', name='L3')
+], name="MOVIE_NETWORK")
+
+# create the user input and point to the base network
+user_input = tf.keras.layers.Input(shape=num_user_features)
+vu = user_sequential_network(user_input)
+vu = tf.linalg.l2_normalize(vu, axis=1)
+
+# create the item input and point to the base network
+item_input = tf.keras.layers.Input(shape=num_user_features)
+vm = movie_sequential_network(item_input)
+vm = tf.linalg.l2_normalize(vm, axis=1)
+
+# compute the dot product of the two vectors vu and vm
+output = tf.keras.layers.Dot(axes=1)([vu, vm])
+
+# specify the inputs and output of the model
+model = tf.keras.Model([user_input, item_input], output)
+
+model.summary()
 
 
