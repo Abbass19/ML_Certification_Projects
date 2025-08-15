@@ -23,4 +23,3 @@ Each folder contains Jupyter notebooks, code walkthroughs, and examples showcasi
 | `2-Advanced-Learning-Algorithms` | Complex methods like ensemble, neural nets |
 | `3-Unsupervised-Leaning` | Clustering, dimensionality reduction, etc. |
 
-*(Note: fix typos like “Leaning” to “Learning” for polish.)*
